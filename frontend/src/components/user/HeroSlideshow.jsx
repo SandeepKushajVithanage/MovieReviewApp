@@ -26,7 +26,7 @@ export default function HeroSlidShow() {
     if (error) return updateNotification("error", error);
 
     setSlides([...movies]);
-    setCurrentSlide(movies[0]);
+    setCurrentSlide(movies[0] ?? {});
   };
 
   const startSlideShow = () => {
@@ -64,7 +64,7 @@ export default function HeroSlidShow() {
     pauseSlideShow();
     setClonedSlide(slides[count]);
     count = (count + 1) % slides.length;
-    setCurrentSlide(slides[count]);
+    setCurrentSlide(slides[count] ?? {});
 
     clonedSlideRef.current.classList.add("slide-out-to-left");
     slideRef.current.classList.add("slide-in-from-right");
@@ -76,7 +76,7 @@ export default function HeroSlidShow() {
     setClonedSlide(slides[count]);
     count = (count + slides.length - 1) % slides.length;
 
-    setCurrentSlide(slides[count]);
+    setCurrentSlide(slides[count] ?? {});
     clonedSlideRef.current.classList.add("slide-out-to-right");
     slideRef.current.classList.add("slide-in-from-left");
     updateUpNext(count);

@@ -1,5 +1,5 @@
 {
-  "name": "movie_review_backend",
+  "name": "cinezone_backend",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
